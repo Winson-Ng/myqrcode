@@ -21,13 +21,13 @@ function url(u)
 window.location=u;
 }
 
-var ua = window.navigator.userAgent;
-if(ua.indexOf("AlipayClientHK")>0)
+var ua = window.navigator.userAgent.toLowerCase();
+if(ua.indexOf("alipayclienthk")>0)
 {
 aphk.style.display="block";
 url(aphk.href);
 }
-else if(ua.indexOf("AlipayClient")>0)
+else if(ua.indexOf("alipayclient")>0)
 {
 apcn.style.display="block";
 url(apcn.href);
