@@ -9,7 +9,7 @@
 <body>
 <a href="alipayhk://platformapi/startapp?appId=10000007&actionType=route&qrcode=https://qr.alipay.hk/2810040101c2hvhdujpamx8l59" id="aphk" style="display:none;">AlipayHK</a>
 <a href="alipays://platformapi/startApp?appId=10000007&actionType=route&qrcode=HTTPS://QR.ALIPAY.COM/FKX02611JVKVU6J35TUYDE" id="apcn" style="display:none;">AlipayCN</a>
-<img src="about:blank" style="width:100%; display:none;" id="wechat" alt="WeChat"/>
+<img style="width:100%; display:none;" id="wechat" alt="WeChat"/>
 </body>
 
 <script>
@@ -32,7 +32,7 @@ else if(ua.indexOf("AlipayClient")>0)
 apcn.style.display="block";
 url(apcn.href);
 }
-else if(ua.indexOf("micromessenger"))
+else if(ua.indexOf("micromessenger")>0)
 {
 wechat.style.display="block";
 wechat.src="/myqrcode/images/qr_winson.jpg";
