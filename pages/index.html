@@ -7,18 +7,15 @@
 </head>
 
 <body>
-<a href="alipayhk://platformapi/startapp?appId=10000007&actionType=route&qrcode=https://qr.alipay.hk/2810040101c2hvhdujpamx8l59" id="aphk">AlipayHK</a>
-<a href="alipays://platformapi/startApp?appId=10000007&actionType=route&qrcode=HTTPS://QR.ALIPAY.COM/FKX02611JVKVU6J35TUYDE" id="apcn">AlipayCN</a>
-<img src="about:blank" style="width:100%" id="wechat" alt="WeChat"/>
+<a href="alipayhk://platformapi/startapp?appId=10000007&actionType=route&qrcode=https://qr.alipay.hk/2810040101c2hvhdujpamx8l59" id="aphk" style="display:none;">AlipayHK</a>
+<a href="alipays://platformapi/startApp?appId=10000007&actionType=route&qrcode=HTTPS://QR.ALIPAY.COM/FKX02611JVKVU6J35TUYDE" id="apcn" style="display:none;">AlipayCN</a>
+<img src="about:blank" style="width:100%; display:none;" id="wechat" alt="WeChat"/>
 </body>
 
 <script>
 var aphk=document.getElementById("aphk");
 var apcn=document.getElementById("apcn");
 var wechat=document.getElementById("wechat");
-aphk.style.display="none";
-apcn.style.display="none";
-wechat.style.display="none";
 function url(u)
 {
 window.location=u;
@@ -33,7 +30,7 @@ url(aphk.href);
 else if(ua.indexOf("AlipayClient")>0)
 {
 apcn.style.display="block";
-url(aphk.href:apcn.href);
+url(apcn.href);
 }
 else if(ua.indexOf("micromessenger"))
 {
