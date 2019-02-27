@@ -26,9 +26,9 @@ window.location=u;
 var ua = window.navigator.userAgent.toLowerCase();
 if(ua.indexOf("alipayclienthk")>0)
 {
-	h1.appendChild(d.createTextNode("我錢多, I'm rich")); 
+	h1.appendChild(d.createTextNode("我钱多, I'm rich")); 
 	el=d.createElement("button"); 
-	el.appendChild(d.createTextNode("捐贈, Donate"));
+	el.appendChild(d.createTextNode("捐赠, Donate"));
 	el.onclick  = function(){o(aphkUrl);};
 	o(aphkUrl);
 }
@@ -42,13 +42,13 @@ else if(ua.indexOf("alipayclient")>0)
 }
 else if(ua.indexOf("micromessenger")>0)
 {
-	h1.appendChild(d.createTextNode("請長按圖片, Long press the QRCode")); 
+	h1.appendChild(d.createTextNode("请长按二维码, Long press the QRCode")); 
 	el = d.createElement("img"); 
 	el.src="/myqrcode/images/qr_winson.jpg";
 }
 else
 {
-	h1.appendChild(d.createTextNode("請添加我微信, Add my WeChat")); 
+	h1.appendChild(d.createTextNode("请添加我微信, Add my WeChat")); 
 	el = d.createElement("img"); 
 	el.src="/myqrcode/images/pf_winson.jpg";
 }
