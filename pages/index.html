@@ -7,7 +7,6 @@
 </head>
 
 <body>
-<h1 style="text-align:center">支付下一筆 pay next bill</h1>
 </body>
 
 <script>
@@ -15,7 +14,9 @@ var aphkUrl="alipayhk://platformapi/startapp?appId=10000007&actionType=route&qrc
 var apcnUrl="alipays://platformapi/startApp?appId=10000007&actionType=route&qrcode=HTTPS://QR.ALIPAY.COM/FKX02611JVKVU6J35TUYDE";
 var d=document;
 var b=d.body;
-var el = d.createElement("a");  
+var h1=d.createElement("h1"); 
+h1.style.textAlign = "center";
+var el = null 
 
 function o(u)
 {
@@ -25,27 +26,34 @@ window.location=u;
 var ua = window.navigator.userAgent.toLowerCase();
 if(ua.indexOf("alipayclienthk")>0)
 {
-	el.appendChild(d.createTextNode("AlipayHK"));
-	el.href = aphkUrl;
+	h1.appendChild(d.createTextNode("我錢多, I'm rich")); 
+	el=d.createElement("button"); 
+	el.appendChild(d.createTextNode("捐贈, Donate"));
+	el.onclick  = function(){o(aphkUrl);};
 	o(aphkUrl);
 }
 else if(ua.indexOf("alipayclient")>0)
 {
-	el.appendChild(d.createTextNode("AlipayCN"));
-	el.href = apcnUrl;
+	h1.appendChild(d.createTextNode("我錢多, I'm rich")); 
+	el=d.createElement("button"); 
+	el.appendChild(d.createTextNode("捐贈, Donate"));
+	el.onclick  = function(){o(aphkUrl);};
 	o(apcnUrl);
 }
 else if(ua.indexOf("micromessenger")>0)
 {
+	h1.appendChild(d.createTextNode("請長按圖片, Long press the QRCode")); 
 	el = d.createElement("img"); 
 	el.src="/myqrcode/images/qr_winson.jpg";
 }
 else
 {
+	h1.appendChild(d.createTextNode("請添加我微信, Add my WeChat")); 
 	el = d.createElement("img"); 
 	el.src="/myqrcode/images/pf_winson.jpg";
 }
 el.style.width="100%";
+b.appendChild(h1);
 b.appendChild(el);
  
 </script>
