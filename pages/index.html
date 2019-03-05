@@ -12,6 +12,8 @@
 <script>
 var aphkUrl="alipayhk://platformapi/startapp?appId=10000007&actionType=route&qrcode=https://qr.alipay.hk/2810040101c2hvhdujpamx8l59";
 var apcnUrl="alipays://platformapi/startApp?appId=10000007&actionType=route&qrcode=HTTPS://QR.ALIPAY.COM/FKX02611JVKVU6J35TUYDE";
+var wpf="https://u.wechat.com/IAyhPHrAAcgkdDB1gYAWbUc";
+var dpf="https://qr.dingtalk.com/page/profile?profile=%40kgDODByeGA%40local&source=qrcode";
 var d=document;
 var b=d.body;
 var h1=d.createElement("h1"); 
@@ -42,9 +44,17 @@ else if(ua.indexOf("alipayclient")>0)
 }
 else if(ua.indexOf("micromessenger")>0)
 {
-	h1.appendChild(d.createTextNode("请长按二维码, Long press the QRCode")); 
+	h1.appendChild(d.createTextNode("请添加我微信, Add my WeChat")); 
 	el = d.createElement("img"); 
-	el.src="/myqrcode/images/qr_winson.jpg";
+	el.src="/myqrcode/images/pf_winson.jpg";
+	o(wpf);
+}
+else if(ua.indexOf("dingtalk")>0)
+{
+	h1.appendChild(d.createTextNode("请添加我钉钉, Add my DingTalk")); 
+	el = d.createElement("img"); 
+	el.src="/myqrcode/images/pf_winson_dt.jpg";
+	o(dpf);
 }
 else
 {
